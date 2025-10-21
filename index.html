@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/" type="image/png">
+    <title>Scholar Ship Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+     <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+     </script>
+
+</head>
+<body>
+   <header class="header">
+       <nav class="navbar">
+            <div class="container">          
+                <a href="#accueil" class="logo">
+                    <img src="logo/modele1.3.webp" alt="Logo" style="height:32px; vertical-align:middle; margin-right:8px;">
+                    StudEasein - Comme une famile
+                </a>
+
+                <button class="nav-toggle" aria-label="ouvrir le menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="nav-menu">
+                    <li class="nav-close-li">
+                        <button class="nav-close" aria-label="fermer le menu">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </li>
+                    <li><img src=""></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#a-propos">A propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="theme-toggle-li">
+                         <div class="theme-toggle">
+                            <input type="checkbox" id="darkmode-toggle" class="darkmode-input">
+                            <label for="darkmode-toggle" class="darkmode-label">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+  
+        <div class="hero">
+            <div class="hero-content container" id="accueil">
+                <h1>Vous ne serez plus jamais seul !!!</h1>
+                <h2>envolez-vous</h2>
+                <p>Services complets d'offre et d'accompgnement pour votre insertion en france.</p>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="prestations container">
+            <h2>Des prestations complètes</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="" alt="Aide à l'inscription">
+                    <h3>Aide aux procédures</h3>
+                    <p>OUVERTE</p>
+                </div>
+                <div class="card">
+                    <img src="" alt="Obtention du visa">
+                    <h3>Aide à l'obtention des allocations</h3>
+                    <p><ul>
+                     <li>Titre de sejour.</li>
+                     <li>(on va remplir).</li>
+                     <li>(..........).</li>
+                    </ul>
+                </p>
+                </div>
+                <div class="card">
+                    <img src="" alt="Obtention de logements">
+                    <h3>Obtention de logements</h3>
+                    <p>Grand catalogue de residence à coût adaptés pour les internationaux.</p>
+                </div>
+            </div>
+
+            <div class="explication" >
+            <p>Ouvrez les portes d'une vie sereine avec StudEasIn :<b>France</b>, <b>Allemagne</b>! <br>Nous croyons que les étudiants doivent être préoccupés par les études et rien d'autres.</p>
+            <p><br>Nous vous aidons à concrétiser vos ambitions. Notre mission est de vous accompagner vers votre avenir international, en vous fournissant les outils et les ressources nécessaires</p>
+           </div>
+           
+            </div>
+            <div class="procedure-card" id="procedure">
+                <h2>"presentation"</h2>
+                <ol>
+                    <li>
+                        <strong>texte</strong>
+                        <ul>
+                            <li>............</li>
+                            <li>...........</li>
+                            <li>...............</li>
+                           
+                        </ul>
+                    </li>
+                   
+                </ol>
+            </div>
+<!-- ...existing code... -->
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="services-hero">
+                <h1>Services</h1>
+            </div>
+
+            <div class="container accordion-container">
+                 <div class="etude-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">ETUDIER EN ILE DE FRANCE</button>
+                    <div class="accordion-content">
+                        <ul>
+                          <!-- <li><input type="checkbox" checked disabled> Inscription dans les écoles françaises.</li>
+                            <li><input type="checkbox" disabled> Université de TROYES. <a href="https://www.utt.fr/">plus d'infos</a></li>
+                            <li><input type="checkbox" disabled> Emlyon business school. <a href="https://em-lyon.com/fr">plus d'infos</a></li>
+                            <li><input type="checkbox" disabled> INSEEC. <a href="https://www.inseec.com/">plus d'infos</a></li>
+                            <li><input type="checkbox" disabled> ENSAO. <a href="#">plus d'infos</a></li>
+                            <li><input type="checkbox" disabled> IFEC Toulouse. <a href="https://ifec.fr/">plus d'infos</a></li>
+                            <li><input type="checkbox" checked disabled> Obtention de l' AVI : caution bancaire.</li>
+                            <li><input type="checkbox" checked disabled> Création compte bancaire.</li>
+                        -->  </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">ETUDIER EN HAUT DE FRANCE</button>
+                    <div class="accordion-content">
+                        <ul>
+                              </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">ETUDIER EN NORMANDIE</button>
+                    <div class="accordion-content">
+                        <ul>
+                              </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">ETUDIER A LA COTE D'AZUR</button>
+                    <div class="accordion-content">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+               </div> 
+            </div>
+        </section>
+            
+        <section class="questions section" id="faqs">
+                 <h1 style="text-align: center;">FAQs</h1>
+                <h2 class="section_title-center questions_title container">
+                    Quelques questions auxquelles <br> nous répondons souvent
+                </h2>
+                <div class="questions__container container grid">
+                    <div class="faq-accordion">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Quel est le plus qu'on apporte
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    question 2
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                reponse   
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    question 3
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                 reponse  
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-accordion">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    question 4
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                               reponse 4   
+                                </p>
+                            </div>
+                        </div>
+                         <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                   question 5
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                reponse 5:
+                                
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                   question 6
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                               reponse 6 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="container team-members">
+
+              
+            </div>
+        </section>
+
+         <section class="about-us container" id="a-propos">
+            <br><h1 style ="text-align:center;">A PROPOS</h1>
+            <div class="about-card">
+                <h2> Qui somme nous ?</h2>
+on met un texte
+                <h2>Notre Mission</h2>
+                texte
+<h2>Nos Valeurs</h2>
+  texte
+            </p>
+             <p>
+    Nous sommes fiers de notre équipe et de notre mission, et nous sommes impatients de continuer à aider les étudiants camerounais à atteindre leurs objectifs académiques et professionnel
+             </div>
+           </section>
+           
+           <section id="contact" class="main-section">
+            <h1 style="text-align: center; margin-bottom: 2rem;">Contactez-nous</h1>
+    <div class="container contact-section-content">
+         <div class="contact-column horaire">
+            <h3>PRE-ENREGISTREZ-VOUS</h3>
+            <p>Rejoignez-nous dès maintenant et préparons votre <br>insertion !</p>
+             <a style="color: rgb(30, 30, 69);" href="https://docs.google.com/forms/d/e/1FAIpQLSdH0Z5ggJl4f2RgYlW5RzpCldp-z5K6umWZr6gFH2rJKoYDZw/viewform?usp=headers"  class="bouton_form">
+                Remplir le formulaire dès maintenant
+             </a>
+        </div>
+        <div class="contact-column horaire">
+            <h3>HORAIRE ET DISPONIBILITE</h3>
+            <p style="align-content: center;">Du lundi à vendredi de 9h à 18h<br>
+               Le samedi de 13h à 18h<br>
+            <b>Fermé le dimanche</b></p>
+        </div>
+        <div class="contact-column horaire">
+            <h3>Téléphone</h3>
+            <p><i class="fab fa-whatsapp"></i>  <a href="https://wa.me/qr/SZ23ID5F6K7KP1">Nous écrire 📝</a></p><br>
+            <h3>Email</h3>
+            <p><i class="fas fa-envelope"></i>  <a href="mailto:studeasein@gmail.com">Envoyer un Mail</a></p>
+        </div>
+        <div class="contact-column horaire">
+        <!-- <div style="text-align: center; margin-block: 1.5em;"><b>
+            Nous acceptons toutes les cartes <br></b>
+         </div>
+            <div class="cartes-row">
+        <img src="img/card1.png" alt="Carte 1" class="carte">
+        <img src="img/card2.png" alt="Carte 2" class="carte">
+        <img src="img/card3.png" alt="Carte 3" class="carte">
+
+            </div>
+        </div>-->
+    </div>
+</section>
+        </main>
+
+    <footer>
+      <img src="">
+      <div>
+        <b>StudEaseIn</b>, Vous ne serez plus jamais seul !!!
+      </div>
+      <div>
+        <b>NOS RESEAUX: </b><br>
+        <i class="fab fa-whatsapp"></i>  <a href=""> WhatsApp</a><br>
+        <i class="fab fa-instagram"></i><a href="">Instagram</a><br>
+               
+      </div>
+    </footer>
+
+
+    <script src="script1.js"></script>
+</body>
+</html>

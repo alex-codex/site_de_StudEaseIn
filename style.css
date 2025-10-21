@@ -1,0 +1,990 @@
+/* Variables CSS pour les thèmes */
+:root {
+    /* Thème Jour (par défaut) */
+    --background-color-day: #f4f4f4;
+    --text-color-day: #333;
+    --header-bg-day: rgba(0, 0, 0, 0.7);
+    --navbar-text-color-day: #fff;
+    --card-bg-day: #fff;
+    --card-border-day: #ddd;
+    --card-shadow-day: rgba(0, 0, 0, 0.1);
+    --card-title-color-day: #0056b3;
+    --accordion-bg-day: #222;
+    --accordion-header-bg-day: #333;
+    --accordion-header-text-day: #eee;
+    --accordion-border-day: #444;
+    --accordion-content-bg-day: #2c2c2c;
+    --accordion-content-text-day: #ccc;
+    --footer-bg-day: #333;
+    --footer-text-color-day: #fff;
+    --link-color-day: #007bff;
+    --hover-link-color-day: #ffd700; /* Gold for hover */
+
+    /* Variables pour le thème actuel (sera mis à jour par JS) */
+    --background-color: var(--background-color-day);
+    --text-color: var(--text-color-day);
+    --header-bg: var(--header-bg-day);
+    --navbar-text-color: var(--navbar-text-color-day);
+    --card-bg: var(--card-bg-day);
+    --card-border: var(--card-border-day);
+    --card-shadow: var(--card-shadow-day);
+    --card-title-color: var(--card-title-color-day);
+    --accordion-bg: var(--accordion-bg-day);
+    --accordion-header-bg: var(--accordion-header-bg-day);
+    --accordion-header-text: var(--accordion-header-text-day);
+    --accordion-border: var(--accordion-border-day);
+    --accordion-content-bg: var(--accordion-content-bg-day);
+    --accordion-content-text: var(--accordion-content-text-day);
+    --footer-bg: var(--footer-bg-day);
+    --footer-text-color: var(--footer-text-color-day);
+    --link-color: var(--link-color-day);
+    --hover-link-color: var(--hover-link-color-day);
+}
+
+/* Thème Nuit */
+body.dark-mode {
+    --background-color: #1a1a2e; /* Sombre */
+    --text-color: #e0e0e0; /* Texte clair */
+    --header-bg: rgba(20, 20, 30, 0.8); /* Barre de nav plus sombre */
+    --navbar-text-color: #f0f0f0;
+    --card-bg: #2a2a4a; /* Fond de carte sombre */
+    --card-border: #404060;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --card-title-color: #87ceeb; /* Bleu ciel pour les titres */
+    --accordion-bg: #1c1c3a;
+    --accordion-header-bg: #2c2c4a;
+    --accordion-header-text: #f0f0f0;
+    --accordion-border: #3c3c5a;
+    --accordion-content-bg: #20203a;
+    --accordion-content-text: #d0d0d0;
+    --footer-bg: #10102a;
+    --footer-text-color: #f0f0f0;
+    --link-color: #a0d9ff; /* Lien plus clair */
+    --hover-link-color: #add8e6; /* Hover plus clair */
+}
+
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color); /* Utilise la variable de couleur de texte */
+    background-color: var(--background-color); /* Utilise la variable de couleur de fond */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+.header {
+    position:relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* ...existing code... */
+.navbar.hide-navbar {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+/* ...existing code... */
+
+.navbar {
+    background-color: var(--header-bg); /* Utilise la variable */
+    color: var(--navbar-text-color); /* Utilise la variable */
+    padding: 1rem 0;
+    /* position: fixed;   <-- retire ou commente cette ligne */
+    /* top: 0;            <-- retire ou commente cette ligne */
+    /* left: 0;           <-- retire ou commente cette ligne */
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+    /* AJOUT : S'assurer que le logo reste visible */
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center; /* AJOUT : Pour bien aligner le toggle theme */
+}
+
+
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--hover-link-color);
+}
+
+
+/* Mode Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    background:#396ca2;
+    border-radius: 50px;
+    padding: 6px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--card-title-color, #0056b3);
+}
+
+.theme-toggle:hover {
+    background:#396ca2;
+    box-shadow: 0 4px 16px rgba(87, 85, 85, 0.12);
+}
+
+.darkmode-input {
+    display: none;
+}
+
+.darkmode-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    gap: 0.5em;
+    color: var(--navbar-text-color, #222);
+    transition: color 0.3s;
+}
+
+.darkmode-input:not(:checked) + .darkmode-label .fa-sun {
+    color: #FFD600;
+    opacity: 1;
+    transform: scale(1.2);
+}
+.darkmode-input:not(:checked) + .darkmode-label .fa-moon {
+      color: #222;
+    transform: scale(0.7);
+}
+.darkmode-input:checked + .darkmode-label .fa-moon {
+    color: #222;
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+.darkmode-input:checked+ .darkmode-label .fa-sun {
+    color: #FFD600;
+    opacity: 1;
+    transform: scale(0.7);
+}
+
+.darkmode-label .fa-sun,
+.darkmode-label .fa-moon {
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
+}
+/* Hero Section */
+.hero {
+    background: url('logo/Modele1.3.webp') no-repeat center center/cover;
+    background-attachment:scroll; /* CORRECTION: Assure que l'image défile avec la page */
+    color: #fff; /* Toujours blanc pour le texte du héros sur l'image sombre */
+    text-align: center;
+    padding: 100px 20px 150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    position: relative;
+    z-index: 900;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.explication{
+
+    margin-top: 3em ;
+    margin-bottom: 3em;
+    text-align: left;
+    margin-left: 4em;
+    font-size: 1.2em;
+}
+.explication b{
+    text-decoration: underline;
+}
+/* Prestations Section (Accueil) */
+.prestations {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--background-color); /* S'adapte au thème */
+    transition: background-color 0.3s ease;
+}
+
+.prestations h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-bg); /* S'adapte au thème */
+    border: 1px solid var(--card-border); /* S'adapte au thème */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--card-shadow); /* S'adapte au thème */
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin: 15px 15px 5px;
+    color: var(--card-title-color); /* S'adapte au thème */
+    transition: color 0.3s ease;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--text-color); /* Couleur de texte principale */
+    padding: 0 15px 15px;
+    transition: color 0.3s ease;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--background-color); /* S'adapte au thème */
+    padding-bottom: 60px;
+    transition: background-color 0.3s ease;
+}
+
+.services-hero {
+    background: url('img/stylot.png') no-repeat center center/cover;
+    color: #fff; /* Toujours blanc pour le texte du héros sur l'image sombre */
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.services-hero h1 {
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.accordion-container {
+    background-color: var(--accordion-bg); /* S'adapte au thème */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--accordion-border); /* S'adapte au thème */
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.accordion-header {
+    background-color: var(--accordion-header-bg); /* S'adapte au thème */
+    color: var(--accordion-header-text); /* S'adapte au thème */
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.accordion-header::after {
+    content: '\002B';
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    content: '\2212';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-header:hover {
+    background-color: color-mix(in srgb, var(--accordion-header-bg) 80%, black); /* Un peu plus sombre au survol */
+}
+
+.accordion-content {
+    transition: max-height 0.3s ease, padding 0.3s;
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--accordion-content-bg); /* S'adapte au thème */
+    color: var(--accordion-content-text); /* S'adapte au thème */
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 15px 0;
+}
+
+.accordion-content li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-content li input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--link-color); /* Couleur du lien */
+}
+
+.accordion-content li a {
+    color: var(--link-color); /* S'adapte au thème */
+    text-decoration: none;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+
+.accordion-content li a:hover {
+    text-decoration: underline;
+    color: var(--hover-link-color); /* S'adapte au thème */
+}
+
+/* About Us Section (Text blocks) */
+.about-us-page {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--background-color); /* S'adapte au thème */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-us-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.about-us-page p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 0.3s ease;
+}
+
+.about-us-page p strong {
+    font-weight: bold;
+}
+
+
+
+/* Footer (commun aux pages Contact et autres) */
+footer {
+    background-color: var(--footer-bg); /* S'adapte au thème */
+    color: var(--footer-text-color); /* S'adapte au thème */
+    padding: 30px 0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* AJOUT : Styles pour les boutons du menu mobile (hamburger et fermeture) */
+.nav-toggle, .nav-close {
+    display: none; /* Cachés par défaut sur grand écran */
+    background: none;
+    border: none;
+    color: var(--navbar-text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.nav-close-li {
+    display: none; /* Caché par défaut */
+}
+
+
+.footer-content {
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: var(--link-color); /* S'adapte au thème */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--hover-link-color); /* S'adapte au thème */
+}
+
+.footer-simple .container p {
+    margin-bottom: 10px;
+}
+
+
+/* Responsive Design */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* MODIFICATION : Logique du menu Hamburger */
+    .nav-toggle {
+        display: block; /* Affiche l'icône hamburger */
+    }
+
+    .navbar .container {
+        /* On retire flex-direction: column pour que le logo et le hamburger restent sur la même ligne */
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Commence en dehors de l'écran */
+        width: 35%;
+        height: 100%;
+        background-color: var(--card-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* AJOUT : Classe pour afficher le menu */
+    .nav-links.show-menu {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        color: var(--text-color); /* Le texte est sur un fond de carte, donc on utilise la couleur de texte normale */
+    }
+
+    .nav-close-li {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    .nav-close {
+        display: block;
+        color: var(--text-color);
+    }
+    
+    /* MODIFICATION : On déplace le theme-toggle dans le menu mobile */
+    .theme-toggle-li {
+        order: 5; /* Place le toggle en dernier */
+    }
+
+    .theme-toggle {
+        margin-top: 1rem; 
+        margin-left: 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem; 
+    }
+
+    .hero h2 {
+        font-size: 1.5rem; 
+    }
+
+    .prestations h2 {
+        font-size: 1.8rem; 
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .accordion-header {
+        font-size: 1rem; 
+    }
+
+    .about-us-page h1, .team-contact-page h1 {
+        font-size: 2rem; 
+    }
+
+    /* AJOUT : Réduction des marges pour une meilleure vue sur mobile */
+    .explication {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .procedure-card, .about-card {
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .contact-section-content {
+        grid-template-columns: 1fr; 
+        padding: 20px 15px;
+    }
+    
+    .questions__group {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */ 
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 15px 120px; 
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; 
+    }
+
+    .hero h2 {
+        font-size: 1.3rem; 
+    }
+
+    .hero p {
+        font-size: 1rem; 
+    }
+
+    .accordion-container {
+        padding: 10px; 
+    }
+
+    .accordion-header {
+        padding: 12px 15px; 
+    }
+
+    .accordion-content {
+        padding: 0 15px; 
+    }
+}
+
+
+Masque toutes les sections principales par défaut 
+.main-section {
+   margin-top: 10em;
+}
+
+#accueil {
+    display: block; /* Ou display: flex; si c'est un flex container */
+}
+
+
+/* Ajoute ce style pour le bloc procédure */
+.procedure-card {
+    background: var(--card-bg, #fff); /* Utilise la variable de fond de carte, ou blanc par défaut */
+    border: 2px solid var(--link-color, #0077b6); /* Utilise une couleur de bordure cohérente avec votre thème, ici la couleur des liens ou un bleu par défaut */
+    border-radius: 16px; /* Des bords arrondis */
+    padding: 2.5rem 2rem; /* Espacement intérieur */
+    margin-top: 3rem; /* Marge supérieure pour le séparer de la section précédente */
+    margin-bottom: 2.5rem; /* Marge inférieure */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08); /* Une légère ombre pour le faire ressortir */
+    max-width: 900px; /* Largeur maximale pour éviter qu'il ne s'étende trop */
+    margin-left: auto; /* Centre le bloc */
+    margin-right: auto; /* Centre le bloc */
+}
+
+.procedure-card h2 {
+    color: var(--card-title-color, #0077b6); /* Utilise la couleur des titres de carte ou un bleu par défaut */
+    margin-bottom: 1.5rem; /* Marge sous le titre */
+    font-size: 2rem; /* Taille de police pour le titre */
+    text-align: center; /* Centre le titre */
+}
+
+.procedure-card ol {
+    padding-left: 1.2em; /* Indentation pour la liste ordonnée */
+    color: var(--text-color); /* Assure que le texte est lisible avec le thème */
+}
+
+.procedure-card ul {
+    margin-bottom: 1.5rem; /* Marge sous les listes non ordonnées */
+    padding-left: 1.2em; /* Indentation pour la liste non ordonnée */
+    color: var(--text-color); /* Assure que le texte est lisible avec le thème */
+}
+
+.procedure-card li {
+    margin-bottom: 0.7rem; /* Marge entre les éléments de liste */
+}
+
+.procedure-card strong {
+    color: var(--card-title-color, #0056b3); /* S'assure que les éléments 'strong' sont bien visibles */
+}
+
+.procedure-card em {
+    color: var(--text-color); /* S'assure que le texte en italique est lisible */
+    font-size: 0.9em;
+}
+
+/* Ajustements pour les listes imbriquées afin d'éviter une trop grande indentation */
+.procedure-card ol li ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1em; /* Réduit un peu l'indentation des listes imbriquées */
+}
+
+.procedure-card ol li ul li {
+    margin-bottom: 0.5rem;
+}
+
+.carte{
+    width: 25px;
+}
+/* bloc ABOUT */
+/* Ajoute ce style pour le bloc procédure */
+.about-card {
+    background: var(--card-bg, #fff); /* Utilise la variable de fond de carte, ou blanc par défaut */
+    border: 2px solid var(--link-color, #0077b6); /* Utilise une couleur de bordure cohérente avec votre thème, ici la couleur des liens ou un bleu par défaut */
+    border-radius: 16px; /* Des bords arrondis */
+    padding: 2.5rem 2rem; /* Espacement intérieur */
+    margin-top: 3rem; /* Marge supérieure pour le séparer de la section précédente */
+    margin-bottom: 2.5rem; /* Marge inférieure */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08); /* Une légère ombre pour le faire ressortir */
+    max-width: 900px; /* Largeur maximale pour éviter qu'il ne s'étende trop */
+    margin-left: auto; /* Centre le bloc */
+    margin-right: auto; /* Centre le bloc */
+}
+
+.about-card h2 {
+    color: var(--card-title-color, #0077b6); /* Utilise la couleur des titres de carte ou un bleu par défaut */
+    margin-bottom: 1.5rem; /* Marge sous le titre */
+    font-size: 2rem; /* Taille de police pour le titre */
+    text-align: center; /* Centre le titre */
+}
+
+.about-card ol {
+    padding-left: 1.2em; /* Indentation pour la liste ordonnée */
+    color: var(--text-color); /* Assure que le texte est lisible avec le thème */
+}
+
+.about-card ul {
+    margin-bottom: 1.5rem; /* Marge sous les listes non ordonnées */
+    padding-left: 1.2em; /* Indentation pour la liste non ordonnée */
+    color: var(--text-color); /* Assure que le texte est lisible avec le thème */
+}
+
+.about-card li {
+    margin-bottom: 0.7rem; /* Marge entre les éléments de liste */
+}
+
+.about-card strong {
+    color: var(--card-title-color, #0056b3); /* S'assure que les éléments 'strong' sont bien visibles */
+}
+
+.about-card em {
+    color: var(--text-color); /* S'assure que le texte en italique est lisible */
+    font-size: 0.9em;
+}
+
+/* Ajustements pour les listes imbriquées afin d'éviter une trop grande indentation */
+.about-card ol li ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1em; /* Réduit un peu l'indentation des listes imbriquées */
+}
+
+.about-card ol li ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* QUESTIONS SECTION */
+.questions {
+    background-color:var(--background-color); /* Utilise la couleur de fond du thème */
+}
+/*
+.questions__container {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}*/
+
+.questions__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    row-gap: 1.5rem;
+    column-gap: 2rem; /* Espace entre les colonnes */
+    max-width: 900px; /* Largeur max pour éviter que ce soit trop étiré */
+    margin: 0 auto;   /* Centre le bloc */
+}
+
+.questions__item {
+    background-color: var(--card-bg); /* Utilise la couleur de fond des cartes */
+    border-radius: .25rem;
+    transition: box-shadow 0.3s;
+    margin-top: 2em;;
+}
+
+.questions__item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.questions__item-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.questions__icon {
+    font-size: 1.25rem;
+    color: var(--card-title-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.questions__description {
+    font-size: 0.95rem;
+    padding: 0 1.25rem 1.25rem 2.5rem;
+    color: var(--text-color); /* J'ai corrigé 'red' par var(--text-color) ici */
+    transition: color 0.3s;
+}
+
+.questions__header {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    padding: .75rem .5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.questions__content {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s;
+}
+
+/* Accordéon ouvert : change la couleur de fond et du texte */
+.accordion-open .questions__header,
+.accordion-open .questions__content {
+    background-color:  rgb(56, 51, 81) /*var(--accordion-content-bg)*/;
+}
+
+.accordion-open .questions__item-title,
+.accordion-open .questions__description,
+.accordion-open .questions__icon {
+    color: #FFF;
+}
+
+.accordion-open .questions__icon {
+    transform: rotate(45deg);
+}
+
+.grid{
+  display: grid;
+}
+
+@media (max-width: 700px) {
+    .questions__group {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+    .questions__item{
+        margin-top: 1%;
+    }
+    .questions__container {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+}
+/* Supprime ou commente cette ligne si tu veux voir la section contact */
+.contact-section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    padding: 70px 30px 70px 30px;
+    background: var(--background-color, #f8f9fa);
+    border-radius: 18px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+.contact-column {
+    background: var(--card-bg, #fff);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 260px;
+    align-content: flex-start;
+    text-align: center;
+}
+.contact-column.horaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-column h3{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.carte {
+    width: 38px;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .contact-section-content {
+        grid-template-columns: 1fr;
+        padding: 40px 10px;
+    }
+    .contact-column {
+        min-height: unset;
+    }
+}
+
+.cartes-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 4em;
+    margin-bottom:4em ;
+    margin-left: 1em;
+}
+
+.carte {
+    width: 5.4em;
+    margin: 0; /* retire les marges latérales pour éviter les espaces en trop */
+}
+
+.bouton_form {
+    display: inline-block; /* Permet d'appliquer des padding, margin, etc. */
+    padding: 10px 20px;
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation douce au survol */
+}
+
+.bouton_form:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+.contact-column a{
+    color: var(--link-color, #0077b6); /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    transition: color 0.3s ease; /* Animation douce au survol */    
+
+}
