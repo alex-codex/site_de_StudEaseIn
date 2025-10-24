@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/" type="image/png">
-    <title>Scholar Ship Agency</title>
+    <link rel="shortcut icon" href="logo/Modele1.2.webp" type="image/webp">
+    <title>StudEaseIn — Votre compagnon en France</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Intl-Tel-Input CSS for international phone input -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.min.css" />
     
      <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -21,8 +23,8 @@
        <nav class="navbar">
             <div class="container">          
                 <a href="#accueil" class="logo">
-                    <img src="logo/modele1.3.webp" alt="Logo" style="height:32px; vertical-align:middle; margin-right:8px;">
-                    StudEasein - Comme une famile
+                    <img src="logo/Modele1.2.webp" alt="Logo StudEaseIn" style="height:32px; vertical-align:middle; margin-right:8px;">
+                    StudEaseIn — Comme une famille
                 </a>
 
                 <button class="nav-toggle" aria-label="ouvrir le menu">
@@ -38,7 +40,7 @@
                     <li><img src=""></li>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#a-propos">A propos</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="theme-toggle-li">
                          <div class="theme-toggle">
@@ -56,8 +58,8 @@
         <div class="hero">
             <div class="hero-content container" id="accueil">
                 <h1>Vous ne serez plus jamais seul !!!</h1>
-                <h2>envolez-vous</h2>
-                <p>Services complets d'offre et d'accompgnement pour votre insertion en france.</p>
+                <h2>Votre nouvelle vie commence ici.</h2>
+                <p>De votre candidature universitaire à votre intégration en France, StudEaseIn est votre compagnon à chaque étape.</p>
             </div>
         </div>
 
@@ -65,99 +67,101 @@
 
     <main>
 
-        <section class="prestations container">
+        <section class="prestations container reveal">
             <h2>Des prestations complètes</h2>
             <div class="cards-grid">
+                <!-- Bloc 1 : Aide aux candidatures & Bourses (Nouveau) -->
                 <div class="card">
-                    <img src="" alt="Aide à l'inscription">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Aide aux candidatures & Bourses</h3>
+                    <p>Postulez aux bonnes universités et maximisez vos chances d'obtenir une bourse. Notre équipe valide votre dossier.</p>
+                </div>
+                <!-- Bloc 2 : Aide aux procédures -->
+                <div class="card">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
                     <h3>Aide aux procédures</h3>
-                    <p>OUVERTE</p>
+                    <p>Obtenez votre titre de séjour, votre numéro de sécurité sociale, ou ouvrez un compte bancaire. Nous transformons ce labyrinthe en un plan d'action simple.</p>
                 </div>
+                <!-- Bloc 3 : Aide à l'obtention des allocations -->
                 <div class="card">
-                    <img src="" alt="Obtention du visa">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <h3>Aide à l'obtention des allocations</h3>
-                    <p><ul>
-                     <li>Titre de sejour.</li>
-                     <li>(on va remplir).</li>
-                     <li>(..........).</li>
-                    </ul>
-                </p>
+                    <p>Ne passez pas à côté de la CAF ! Nous vous guidons pour remplir votre demande d'aide au logement dès votre arrivée.</p>
                 </div>
+                <!-- Bloc 4 : Obtention de logements -->
                 <div class="card">
-                    <img src="" alt="Obtention de logements">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
                     <h3>Obtention de logements</h3>
-                    <p>Grand catalogue de residence à coût adaptés pour les internationaux.</p>
+                    <p>Accédez à notre catalogue de résidences étudiantes et de logements vérifiés, adaptés à votre budget.</p>
                 </div>
             </div>
 
-            <div class="explication" >
-            <p>Ouvrez les portes d'une vie sereine avec StudEasIn :<b>France</b>, <b>Allemagne</b>! <br>Nous croyons que les étudiants doivent être préoccupés par les études et rien d'autres.</p>
-            <p><br>Nous vous aidons à concrétiser vos ambitions. Notre mission est de vous accompagner vers votre avenir international, en vous fournissant les outils et les ressources nécessaires</p>
-           </div>
-           
+            <div class="explication">
+                <p>Ouvrez les portes d'une vie sereine avec StudEaseIn. Nous nous concentrons sur les villes clés comme Paris, Lille, Lyon, Marseille, Bordeaux et bien d'autres.</p>
             </div>
-            <div class="procedure-card" id="procedure">
-                <h2>"presentation"</h2>
-                <ol>
-                    <li>
-                        <strong>texte</strong>
-                        <ul>
-                            <li>............</li>
-                            <li>...........</li>
-                            <li>...............</li>
-                           
-                        </ul>
-                    </li>
-                   
-                </ol>
+
+            <div class="procedure-card reveal" id="procedure">
+                <h2>La solution tout-en-un pour votre vie étudiante</h2>
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon" aria-hidden="true">🎓</div>
+                        <h3>Préparez votre arrivée</h3>
+                        <p>Nous vous aidons à postuler aux universités et aux bourses. Faites valider votre dossier par nos experts avant de l'envoyer.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon" aria-hidden="true">✔️</div>
+                        <h3>Zéro Stress Administratif</h3>
+                        <p>Suivez nos guides pas à pas pour toutes vos démarches (Visa, CAF, Banque, Sécu...) et ne ratez plus aucune date limite.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon" aria-hidden="true">🏠</div>
+                        <h3>Réussissez votre intégration</h3>
+                        <p>Trouvez un logement, un job étudiant, et découvrez les bons plans de votre ville avec l'aide de notre communauté.</p>
+                    </div>
+                </div>
             </div>
-<!-- ...existing code... -->
         </section>
 
         <section id="services" class="services-section">
             <div class="services-hero">
-                <h1>Services</h1>
+                <h1>Nos guides par ville</h1>
             </div>
 
-            <div class="container accordion-container">
+            <div class="container accordion-container reveal">
                  <div class="etude-accordion">
                 <div class="accordion-item">
                     <button class="accordion-header">ETUDIER EN ILE DE FRANCE</button>
                     <div class="accordion-content">
-                        <ul>
-                          <!-- <li><input type="checkbox" checked disabled> Inscription dans les écoles françaises.</li>
-                            <li><input type="checkbox" disabled> Université de TROYES. <a href="https://www.utt.fr/">plus d'infos</a></li>
-                            <li><input type="checkbox" disabled> Emlyon business school. <a href="https://em-lyon.com/fr">plus d'infos</a></li>
-                            <li><input type="checkbox" disabled> INSEEC. <a href="https://www.inseec.com/">plus d'infos</a></li>
-                            <li><input type="checkbox" disabled> ENSAO. <a href="#">plus d'infos</a></li>
-                            <li><input type="checkbox" disabled> IFEC Toulouse. <a href="https://ifec.fr/">plus d'infos</a></li>
-                            <li><input type="checkbox" checked disabled> Obtention de l' AVI : caution bancaire.</li>
-                            <li><input type="checkbox" checked disabled> Création compte bancaire.</li>
-                        -->  </ul>
+                        <div class="accordion-inner">
+                            <p>Découvrez les spécificités des démarches à Paris et en Île-de-France, les meilleurs quartiers où se loger, et les bons plans transports (Pass Navigo, etc.).</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">ETUDIER EN HAUT DE FRANCE</button>
                     <div class="accordion-content">
-                        <ul>
-                              </ul>
+                        <div class="accordion-inner">
+                            <p>Cap sur Lille et sa métropole: rythmes universitaires, offres de logements abordables, et mobilités (TER, V'Lille). Nos conseils pour optimiser votre budget étudiant.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">ETUDIER EN NORMANDIE</button>
                     <div class="accordion-content">
-                        <ul>
-                              </ul>
+                        <div class="accordion-inner">
+                            <p>Caen, Rouen, Le Havre: nos guides locaux pour vos démarches, la vie culturelle et les solutions logement proches des campus.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">ETUDIER A LA COTE D'AZUR</button>
                     <div class="accordion-content">
-                        <ul>
-                        </ul>
+                        <div class="accordion-inner">
+                            <p>Nice, Cannes, Antibes: comment naviguer des loyers élevés, optimiser vos transports (Lignes d'Azur) et profiter des opportunités étudiantes.</p>
+                        </div>
                     </div>
                 </div>
                </div> 
@@ -175,13 +179,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                    Quel est le plus qu'on apporte
+                                    Quel est le plus qu'on apporte ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                                    
+                                    Une approche tout-en-un ! De la candidature dans votre pays d'origine au suivi de vos heures de job en France, nous couvrons l'intégralité de votre parcours.
                                 </p>
                             </div>
                         </div>
@@ -190,13 +194,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                    question 2
+                                    Comment fonctionne la validation de dossier ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                                reponse   
+                                Vous nous soumettez votre dossier de candidature (université ou bourse) via votre espace. Un de nos experts l'analyse, vous envoie des corrections et des conseils pour l'optimiser avant l'envoi final.  
                                 </p>
                             </div>
                         </div>
@@ -205,13 +209,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                    question 3
+                                    Vos services sont-ils payants ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                                 reponse  
+                                 StudEaseIn propose une large base de guides et de ressources gratuites. Nos services d'accompagnement personnalisé, comme la validation de dossier ou l'aide à la candidature, sont des prestations payantes pour garantir un service expert.  
                                 </p>
                             </div>
                         </div>
@@ -222,13 +226,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                    question 4
+                                    Peut-on vous contacter avant d'arriver en France ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                               reponse 4   
+                               Bien sûr ! Notre équipe est disponible pour vous orienter sur vos premières démarches et fixer un plan d'action personnalisé.   
                                 </p>
                             </div>
                         </div>
@@ -236,14 +240,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                   question 5
+                                   Proposez-vous une aide au logement ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                                reponse 5:
-                                
+                                Oui. Nous offrons un accès à des logements vérifiés et à des résidences étudiantes partenaires, avec un accompagnement pour constituer un dossier solide. 
                                 </p>
                             </div>
                         </div>
@@ -252,13 +255,13 @@
                             <header class="questions__header">
                                 <i class="ri-add-line questions__icon"></i>
                                 <h3 class="questions__item-title">
-                                   question 6
+                                   Comment se déroule l'accompagnement après l’arrivée ?
                                 </h3>
                             </header>
 
                             <div class="questions__content">
                                 <p class="questions__description">
-                               reponse 6 
+                               Nous restons à vos côtés pour vos démarches (CAF, Sécu, Banque), votre intégration (job étudiant, ville, transports) et répondons rapidement à vos questions via votre espace. 
                                 </p>
                             </div>
                         </div>
@@ -271,29 +274,28 @@
         </section>
 
          <section class="about-us container" id="a-propos">
-            <br><h1 style ="text-align:center;">A PROPOS</h1>
-            <div class="about-card">
-                <h2> Qui somme nous ?</h2>
-on met un texte
+            <br><h1 style ="text-align:center;">À PROPOS</h1>
+            <div class="about-card reveal">
+                <h2>Qui sommes-nous ?</h2>
+                <p>Fondé par d'anciens étudiants internationaux, StudEaseIn est né d'un constat simple : arriver en France est une aventure incroyable, mais aussi un parcours du combattant. Nous sommes cette « famille » sur place, dédiée à rendre votre transition aussi simple et sereine que possible.</p>
+
                 <h2>Notre Mission</h2>
-                texte
-<h2>Nos Valeurs</h2>
-  texte
-            </p>
-             <p>
-    Nous sommes fiers de notre équipe et de notre mission, et nous sommes impatients de continuer à aider les étudiants camerounais à atteindre leurs objectifs académiques et professionnel
-             </div>
+                <p>Supprimer le stress administratif et l'isolement des étudiants internationaux. Nous centralisons toutes les ressources (démarches, logement, job, communauté) pour vous permettre de vous concentrer sur l'essentiel : vos études et votre nouvelle vie.</p>
+
+                <h2>Nos Valeurs</h2>
+                <p>Bienveillance, Fiabilité, Efficacité. Nous privilégions une information vérifiée, un soutien humain et des solutions concrètes.</p>
+
+                <p>Nous sommes fiers de notre équipe et de notre mission, et nous sommes impatients d'aider les étudiants du monde entier à atteindre leurs objectifs académiques et professionnels en France.</p>
+            </div>
            </section>
            
            <section id="contact" class="main-section">
             <h1 style="text-align: center; margin-bottom: 2rem;">Contactez-nous</h1>
-    <div class="container contact-section-content">
+    <div class="container contact-section-content reveal">
          <div class="contact-column horaire">
             <h3>PRE-ENREGISTREZ-VOUS</h3>
             <p>Rejoignez-nous dès maintenant et préparons votre <br>insertion !</p>
-             <a style="color: rgb(30, 30, 69);" href="https://docs.google.com/forms/d/e/1FAIpQLSdH0Z5ggJl4f2RgYlW5RzpCldp-z5K6umWZr6gFH2rJKoYDZw/viewform?usp=headers"  class="bouton_form">
-                Remplir le formulaire dès maintenant
-             </a>
+             <button id="open-preinscription" class="bouton_form" type="button">Remplir le formulaire dès maintenant</button>
         </div>
         <div class="contact-column horaire">
             <h3>HORAIRE ET DISPONIBILITE</h3>
@@ -303,22 +305,10 @@ on met un texte
         </div>
         <div class="contact-column horaire">
             <h3>Téléphone</h3>
-            <p><i class="fab fa-whatsapp"></i>  <a href="https://wa.me/qr/SZ23ID5F6K7KP1">Nous écrire 📝</a></p><br>
+            <p><i class="fab fa-whatsapp"></i>  <a href="mailto:studeasein@gmail.com?subject=Nous%20%C3%A9crire%20-%20StudEaseIn">Nous écrire 📝</a></p><br>
             <h3>Email</h3>
             <p><i class="fas fa-envelope"></i>  <a href="mailto:studeasein@gmail.com">Envoyer un Mail</a></p>
         </div>
-        <div class="contact-column horaire">
-        <!-- <div style="text-align: center; margin-block: 1.5em;"><b>
-            Nous acceptons toutes les cartes <br></b>
-         </div>
-            <div class="cartes-row">
-        <img src="img/card1.png" alt="Carte 1" class="carte">
-        <img src="img/card2.png" alt="Carte 2" class="carte">
-        <img src="img/card3.png" alt="Carte 3" class="carte">
-
-            </div>
-        </div>-->
-    </div>
 </section>
         </main>
 
@@ -329,13 +319,94 @@ on met un texte
       </div>
       <div>
         <b>NOS RESEAUX: </b><br>
-        <i class="fab fa-whatsapp"></i>  <a href=""> WhatsApp</a><br>
-        <i class="fab fa-instagram"></i><a href="">Instagram</a><br>
+        <i class="fab fa-whatsapp"></i>  <a href="#"> WhatsApp</a><br>
+        <i class="fab fa-instagram"></i><a href="#">Instagram</a><br>
                
       </div>
     </footer>
 
+    <!-- Modale de pré-enregistrement -->
+    <div id="preinscription-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="preinscription-title">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-content">
+            <button class="modal-close" id="close-preinscription" aria-label="Fermer">&times;</button>
+            <h2 id="preinscription-title">Pré-enregistrement StudEaseIn</h2>
+            <p style="margin: 6px 0 14px;">Laissez-nous vos informations et nous vous contacterons dès le lancement !</p>
+            <form id="preinscription-form" action="https://formspree.io/f/xnngkkzj" method="POST">
+                <div class="form-row">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-row">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+                </div>
+                <div class="form-row">
+                    <label for="pays">Pays d'origine</label>
+                    <select id="pays" name="pays" required></select>
+                </div>
+                <div class="form-row">
+                    <label for="ville">Ville d'arrivée en France (visée)</label>
+                    <input list="villes-fr" id="ville" name="ville" required>
+                    <datalist id="villes-fr">
+                        <option value="Aix-en-Provence"></option>
+                        <option value="Amiens"></option>
+                        <option value="Angers"></option>
+                        <option value="Avignon"></option>
+                        <option value="Besançon"></option>
+                        <option value="Bordeaux"></option>
+                        <option value="Brest"></option>
+                        <option value="Caen"></option>
+                        <option value="Clermont-Ferrand"></option>
+                        <option value="Dijon"></option>
+                        <option value="Grenoble"></option>
+                        <option value="La Rochelle"></option>
+                        <option value="Le Mans"></option>
+                        <option value="Lille"></option>
+                        <option value="Limoges"></option>
+                        <option value="Lyon"></option>
+                        <option value="Marseille"></option>
+                        <option value="Metz"></option>
+                        <option value="Montpellier"></option>
+                        <option value="Nancy"></option>
+                        <option value="Nantes"></option>
+                        <option value="Nice"></option>
+                        <option value="Nîmes"></option>
+                        <option value="Orléans"></option>
+                        <option value="Paris"></option>
+                        <option value="Pau"></option>
+                        <option value="Poitiers"></option>
+                        <option value="Reims"></option>
+                        <option value="Rennes"></option>
+                        <option value="Rouen"></option>
+                        <option value="Saint-Étienne"></option>
+                        <option value="Strasbourg"></option>
+                        <option value="Toulouse"></option>
+                        <option value="Tours"></option>
+                    </datalist>
+                </div>
+                <p id="preinscription-error" class="form-error hidden" role="alert"></p>
+                <div class="form-actions" style="display:flex; gap:8px; justify-content:flex-end;">
+                    <button type="button" id="modal-close-secondary" class="bouton_form" style="background:#6c757d;">Fermer</button>
+                    <button type="submit" class="bouton_form">Envoyer</button>
+                </div>
+            </form>
+            <div id="preinscription-success" class="success-block hidden" role="status" aria-live="polite">
+                <h3 style="margin-top:0;">Merci !</h3>
+                <p>Votre pré-enregistrement a bien été envoyé. Nous vous contacterons dès le lancement.</p>
+                <div class="form-actions" style="display:flex; gap:8px; justify-content:flex-end;">
+                    <button type="button" id="modal-close-success" class="bouton_form">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script1.js"></script>
+    <!-- Intl-Tel-Input JS for international phone input -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 </body>
 </html>
