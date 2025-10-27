@@ -216,7 +216,7 @@ body {
 }
 /* Hero Section */
 .hero {
-    background: url('logo/Modele1.3.webp') no-repeat center center/cover;
+    background: url('logo/Modele1.2.webp') no-repeat center center/cover;
     background-attachment:scroll; /* CORRECTION: Assure que l'image défile avec la page */
     color: #fff; /* Toujours blanc pour le texte du héros sur l'image sombre */
     text-align: center;
@@ -280,6 +280,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: none;
+}
+
 .prestations h2 {
     font-size: 2rem;
     margin-bottom: 40px;
@@ -298,7 +309,7 @@ body {
     border: 1px solid var(--card-border); /* S'adapte au thème */
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px var(--card-shadow); /* S'adapte au thème */
+    box-shadow: 0 4px 12px var(--card-shadow); /* Légère profondeur */
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
 }
@@ -326,6 +337,20 @@ body {
     color: var(--text-color); /* Couleur de texte principale */
     padding: 0 15px 15px;
     transition: color 0.3s ease;
+}
+
+/* Icônes dans les cartes services */
+.card .card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0 8px 15px;
+    background: color-mix(in srgb, var(--card-title-color) 18%, transparent);
+    color: var(--card-title-color);
+    font-size: 1.3rem;
 }
 
 /* Services Section */
@@ -455,6 +480,11 @@ body {
     color: var(--hover-link-color); /* S'adapte au thème */
 }
 
+/* Contenu texte simple à l'intérieur des accordéons villes */
+.accordion-inner {
+    padding: 15px 20px;
+}
+
 /* About Us Section (Text blocks) */
 .about-us-page {
     padding: 80px 0;
@@ -522,6 +552,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     color: var(--hover-link-color); /* S'adapte au thème */
+    filter: brightness(1.05);
 }
 
 .footer-simple .container p {
@@ -670,7 +701,7 @@ footer a:hover {
 }
 
 
-Masque toutes les sections principales par défaut 
+/* Masque toutes les sections principales par défaut */
 .main-section {
    margin-top: 10em;
 }
@@ -692,6 +723,36 @@ Masque toutes les sections principales par défaut
     max-width: 900px; /* Largeur maximale pour éviter qu'il ne s'étende trop */
     margin-left: auto; /* Centre le bloc */
     margin-right: auto; /* Centre le bloc */
+}
+
+/* Grille des 3 piliers (présentation) */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 1rem;
+}
+
+.pillar {
+    border: 2px solid var(--link-color, #0077b6);
+    border-radius: 12px;
+    background: var(--card-bg, #fff);
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.pillar h3 {
+    color: var(--card-title-color, #0056b3);
+    margin-bottom: 8px;
+}
+
+.pillar p {
+    color: var(--text-color);
+}
+
+.pillar-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
 }
 
 .procedure-card h2 {
@@ -900,8 +961,8 @@ Masque toutes les sections principales par défaut
 /* Supprime ou commente cette ligne si tu veux voir la section contact */
 .contact-section-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(260px, 1fr)); /* 3 colonnes fixes sur desktop */
+    gap: 24px;
     padding: 70px 30px 70px 30px;
     background: var(--background-color, #f8f9fa);
     border-radius: 18px;
@@ -976,15 +1037,118 @@ Masque toutes les sections principales par défaut
     font-weight: bold;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Animation douce au survol */
+    transition: background-color 0.3s ease, transform 0.18s ease, box-shadow 0.3s ease; /* Animation douce au survol */
 }
 
 .bouton_form:hover {
     background-color: #0056b3; /* Couleur au survol */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 .contact-column a{
     color: var(--link-color, #0077b6); /* Couleur des liens */
     text-decoration: none; /* Supprime le soulignement par défaut */
     transition: color 0.3s ease; /* Animation douce au survol */    
 
+}
+
+/* Modale de pré-inscription */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 560px;
+    margin: 6vh auto;
+    background: var(--card-bg, #fff);
+    color: var(--text-color);
+    border: 1px solid var(--card-border, #ddd);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    padding: 24px;
+    max-height: 90vh; /* Correction: hauteur max */
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#preinscription-form.hidden,
+.success-block.hidden,
+.form-error.hidden {
+    display: none;
+}
+
+.success-block {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--card-border, #ddd);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--card-bg) 85%, #3fbf5c 15%);
+}
+
+.form-error {
+    margin: 8px 0 0;
+    color: #c0392b;
+    font-weight: 600;
+}
+
+#preinscription-form {
+    overflow-y: auto; /* rend la zone des champs scrollable */
+}
+
+#preinscription-form .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+#preinscription-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+#preinscription-form input[type="text"],
+#preinscription-form input[type="email"] {
+    padding: 10px 12px;
+    border: 1px solid var(--card-border, #ccc);
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+#preinscription-form .form-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+    .pillars {
+        grid-template-columns: 1fr;
+    }
 }
