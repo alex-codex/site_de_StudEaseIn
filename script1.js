@@ -127,78 +127,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== MODALE PRÉ-ENREGISTREMENT (Formspree) =====
-    const modal = document.getElementById('preinscription-modal');
     const openBtn = document.getElementById('open-preinscription');
-    const closeBtn = document.getElementById('close-preinscription');
-    const closeSecondary = document.getElementById('modal-close-secondary');
-    const backdrop = document.querySelector('.modal-backdrop');
-    const form = document.getElementById('preinscription-form');
-    const successBlock = document.getElementById('preinscription-success');
-    const closeSuccessBtn = document.getElementById('modal-close-success');
-    const errorP = document.getElementById('preinscription-error');
-
-    function openModal() {
-        if (!modal) return;
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        const firstInput = modal.querySelector('input');
-        if (firstInput) firstInput.focus();
+    if (openBtn) {
+        openBtn.setAttribute('data-tally-open', '3EjGdX');
+        openBtn.setAttribute('data-tally-layout', 'modal');
+        openBtn.setAttribute('data-tally-emoji-text', '👋');
+        openBtn.setAttribute('data-tally-emoji-animation', 'wave');
+        openBtn.setAttribute('data-tally-auto-close', '1000');
     }
-
-    function closeModal() {
-        if (!modal) return;
-        modal.classList.remove('open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        openBtn && openBtn.focus();
-    }
-
-    openBtn && openBtn.addEventListener('click', () => {
-        // Reset UI state on each open
-        if (form) form.classList.remove('hidden');
-        if (successBlock) successBlock.classList.add('hidden');
-        if (errorP) { errorP.textContent = ''; errorP.classList.add('hidden'); }
-        openModal();
-    });
-    closeBtn && closeBtn.addEventListener('click', closeModal);
-    closeSecondary && closeSecondary.addEventListener('click', closeModal);
-    backdrop && backdrop.addEventListener('click', closeModal);
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-    });
-
-    // Intercepte la soumission pour afficher un succès sans recharger
-    form && form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (errorP) { errorP.textContent = ''; errorP.classList.add('hidden'); }
-        try {
-            const fd = new FormData(form);
-            const resp = await fetch(form.action, {
-                method: form.method || 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: fd
-            });
-            if (resp.ok) {
-                form.reset();
-                form.classList.add('hidden');
-                successBlock && successBlock.classList.remove('hidden');
-            } else {
-                const data = await resp.json().catch(() => ({}));
-                const msg = data && data.errors ? data.errors.map(e => e.message).join(', ') : 'Une erreur est survenue. Veuillez réessayer.';
-                if (errorP) { errorP.textContent = msg; errorP.classList.remove('hidden'); }
-            }
-        } catch (err) {
-            if (errorP) { 
-                errorP.textContent = "Impossible d'envoyer le formulaire. Vérifiez votre connexion."; 
-                errorP.classList.remove('hidden'); 
-            }
-        }
-    });
-
-    closeSuccessBtn && closeSuccessBtn.addEventListener('click', closeModal);
 
     // ===== INTL TEL INPUT INIT =====
     const telInput = document.getElementById('telephone');
